@@ -31,16 +31,24 @@ public abstract class ChamadoBuilder {
     public void adicionarDescricao(String descricao){
         chamado.setDescricao(descricao);
     }
+
+    //adicionar situacao
+    //adicionar envolvimento
+    //adicionar prioridade
     
-    public void adicionarLocalizacao(){
+    public void adicionarLocalizacao(Localizacao localizacao){
+        chamado.setLocalizacao(localizacao);
     }
     
-    public void adicionarVitimaComunicante(){
+    public void adicionarComunicante(Comunicante comunicante){
+        chamado.setComunicante(comunicante);
     }
     
-    public void adicionarVeiculo(){
+    public void adicionarVeiculo(Veiculo veiculo){
+        chamado.setVeiculo(veiculo);
     }
     
-    public void adicionarServico(){
+    public void adicionarServico(Servico servico){
+        chamado.setServico(servico);
     }
 }
