@@ -110,10 +110,10 @@ public abstract class Chamado implements Cloneable{
         Chamado obj = null;
         try{            
             obj = (Chamado)super.clone();
-//            obj.setLocalizacao((Localizacao) localizacao.clone());
-//            obj.setComunicante((Comunicante) comunicante.clone());
+            obj.setLocalizacao((Localizacao) localizacao.clone());
+            obj.setComunicante((Comunicante) comunicante.clone());
             obj.setServico((Servico) servico.clone());
-//            obj.setVeiculo((Veiculo) veiculo.clone());
+            obj.setVeiculo((Veiculo) veiculo.clone());
             
         }catch (CloneNotSupportedException ex){
             ex.printStackTrace();

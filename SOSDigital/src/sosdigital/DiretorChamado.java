@@ -14,7 +14,7 @@ import java.text.SimpleDateFormat;
  */
 public class DiretorChamado {
     
-    public Chamado chamaPolicia(int protocolo, String chave, SimpleDateFormat data, String descricao, Servico servico){
+    public Chamado chamaPolicia(int protocolo, String chave, SimpleDateFormat data, String descricao, Servico servico, Localizacao localizacao, Veiculo veiculo, Comunicante comunicante){
         Chamado novoChamado = new ChamadoPolicia();
         
         ChamadoPoliciaBuilder chamadoBuilder = new ChamadoPoliciaBuilder(novoChamado);
@@ -23,12 +23,15 @@ public class DiretorChamado {
         chamadoBuilder.adicionarData(data);
         chamadoBuilder.adicionarDescricao(descricao);
         chamadoBuilder.adicionarServico(servico);
+        chamadoBuilder.adicionarLocalizacao(localizacao);
+        chamadoBuilder.adicionarVeiculo(veiculo);
+        chamadoBuilder.adicionarComunicante(comunicante);
         novoChamado.transferirChamado();
         
         return novoChamado;
     }
     
-    public Chamado chamaSamu(int protocolo, String chave, SimpleDateFormat data, String descricao, Servico servico){
+    public Chamado chamaSamu(int protocolo, String chave, SimpleDateFormat data, String descricao, Servico servico, Localizacao localizacao, Veiculo veiculo, Comunicante comunicante){
         Chamado novoChamado = new ChamadoSamu();
         
         ChamadoSamuBuilder chamadoBuilder = new ChamadoSamuBuilder(novoChamado);
@@ -37,11 +40,14 @@ public class DiretorChamado {
         chamadoBuilder.adicionarData(data);
         chamadoBuilder.adicionarDescricao(descricao);
         chamadoBuilder.adicionarServico(servico);
+        chamadoBuilder.adicionarLocalizacao(localizacao);
+        chamadoBuilder.adicionarVeiculo(veiculo);
+        chamadoBuilder.adicionarComunicante(comunicante);
         novoChamado.transferirChamado();
         
         return novoChamado;
     }
-    public Chamado chamaBombeiro(int protocolo, String chave, SimpleDateFormat data, String descricao, Servico servico){
+    public Chamado chamaBombeiro(int protocolo, String chave, SimpleDateFormat data, String descricao, Servico servico, Localizacao localizacao, Veiculo veiculo, Comunicante comunicante){
         Chamado novoChamado = new ChamadoBombeiros();
         
         ChamadoBombeiroBuilder chamadoBuilder = new ChamadoBombeiroBuilder(novoChamado);
@@ -50,6 +56,9 @@ public class DiretorChamado {
         chamadoBuilder.adicionarData(data);
         chamadoBuilder.adicionarDescricao(descricao);
         chamadoBuilder.adicionarServico(servico);
+        chamadoBuilder.adicionarLocalizacao(localizacao);
+        chamadoBuilder.adicionarVeiculo(veiculo);
+        chamadoBuilder.adicionarComunicante(comunicante);
         novoChamado.transferirChamado();
         
         return novoChamado;
