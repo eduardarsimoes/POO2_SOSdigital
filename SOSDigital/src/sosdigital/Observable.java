@@ -13,9 +13,9 @@ public class Observable {
         monitores.remove(ob);
     }
     
-    public void notifyObserver(ConversaChamado chamado){
+    public void notifyObserver(){
         for(Observer ob : monitores){
-            ob.update(chamado);
+            ob.update(this);
         }
     }
 }

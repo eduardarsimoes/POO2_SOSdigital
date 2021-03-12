@@ -6,6 +6,7 @@
 package sosdigital;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 
 /**
  *
@@ -14,6 +15,8 @@ import java.text.SimpleDateFormat;
 public class Main {
     
     public static void main(String[] args) {
+        ArrayList<Atendente> atendentes = new ArrayList();
+        
         Localizacao loc = new Localizacao("a",1,"b","c","d",2,3);
         
         Contato contato = new Contato(27,"123");
@@ -37,13 +40,16 @@ public class Main {
         //Método Observer
         Atendente atendente1 = new Atendente("a","b",new SimpleDateFormat("2020,01,01"));
         Atendente atendente2 = new Atendente("a","b",new SimpleDateFormat("2020,01,01"));
-        Comunicante comunciante = new Comunicante("c","d",new SimpleDateFormat("2020,01,01"),loc,contato);
+        atendentes.add(atendente1);
+        atendentes.add(atendente2);
+        Comunicante comunicante = new Comunicante("c","d",new SimpleDateFormat("2020,01,01"),loc,contato);
         
-        GerenciadorConversas gerenciador = new GerenciadorConversas();
-        gerenciador.addObserver(atendente1);
-        gerenciador.addObserver(atendente2);
+        ConversaChamado conversa = new ConversaChamado();
+        atendentes.forEach((a) -> {
+            conversa.addObserver(a);
+        });
         
-        gerenciador.criarNovaConversa(comunciante);
+        conversa.setComunicante(comunicante);
         
         //Protótipo
         Chamado  chamadoClone1 = (Chamado) chamado1.clone();

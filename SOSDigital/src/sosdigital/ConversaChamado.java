@@ -2,14 +2,10 @@ package sosdigital;
 
 import java.util.ArrayList;
 
-public class ConversaChamado{
+public class ConversaChamado extends Observable{
     private ArrayList<String> msg = new ArrayList();
     private Atendente atendente;
     private Comunicante comunicante;
-    
-    public ConversaChamado(Comunicante comunicante){
-        this.comunicante = comunicante;
-    }
     
     public void setNovaConversa(String texto){
         msg.add(texto);
@@ -21,6 +17,7 @@ public class ConversaChamado{
     
     public void setComunicante(Comunicante comunicante){
         this.comunicante = comunicante;
+        notifyObserver();
     }
     
     public Atendente getAtendente(){
