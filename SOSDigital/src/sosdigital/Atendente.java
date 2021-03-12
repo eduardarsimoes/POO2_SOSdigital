@@ -18,11 +18,12 @@ public class Atendente extends Usuario implements Observer{
     }
 
     @Override
-    public void update(ConversaChamado conversa) {
+    public void update(Observable obs) {
+        ConversaChamado conversa = (ConversaChamado) obs;
         if(conversa.getAtendente() == null){
             conversa.setAtendente(this);
             
-            System.out.println("DEBUG: Atendente atribuido à conversa.");
+            System.out.println("DEBUG: Atendente atribuido à conversa.\n");
         }
     }
 
