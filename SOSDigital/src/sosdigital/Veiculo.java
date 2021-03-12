@@ -9,7 +9,7 @@ package sosdigital;
  *
  * @author mayke
  */
-public class Veiculo {
+public class Veiculo implements Cloneable{
     
     private String chassi;
     private TipoVeiculo veiculo;
@@ -53,6 +53,17 @@ public class Veiculo {
     
     public Servico getServico(){
         return servico;
+    }
+    
+    public Object clone(){
+        Object obj = null;
+        try{
+            obj = super.clone();
+            
+        }catch (CloneNotSupportedException ex){
+            ex.printStackTrace();
+        }        
+        return obj;
     }
     
 }

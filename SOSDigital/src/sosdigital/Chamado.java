@@ -1,8 +1,9 @@
 package sosdigital;
 
+import java.io.Serializable;
 import java.text.SimpleDateFormat;
 
-public abstract class Chamado {
+public abstract class Chamado implements Cloneable{
     private int protocolo;
     private String chave;
     private SimpleDateFormat data;
@@ -104,4 +105,19 @@ public abstract class Chamado {
     }
 
     public abstract void transferirChamado();
+    
+    public Object clone(){
+        Chamado obj = null;
+        try{            
+            obj = (Chamado)super.clone();
+//            obj.setLocalizacao((Localizacao) localizacao.clone());
+//            obj.setComunicante((Comunicante) comunicante.clone());
+            obj.setServico((Servico) servico.clone());
+//            obj.setVeiculo((Veiculo) veiculo.clone());
+            
+        }catch (CloneNotSupportedException ex){
+            ex.printStackTrace();
+        }        
+        return obj;
+    }
 }

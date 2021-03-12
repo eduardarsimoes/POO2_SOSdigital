@@ -9,7 +9,7 @@ package sosdigital;
  *
  * @author mayke
  */
-public class Localizacao {
+public class Localizacao implements Cloneable{
     private String endereco;
     private int numero;
     private String bairro;
@@ -82,6 +82,17 @@ public class Localizacao {
     
     public int getLongitude(){
         return longitude;
+    }
+    
+    public Object clone(){
+        Object obj = null;
+        try{
+            obj = super.clone();
+            
+        }catch (CloneNotSupportedException ex){
+            ex.printStackTrace();
+        }        
+        return obj;
     }
 
 }

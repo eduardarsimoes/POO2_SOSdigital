@@ -9,7 +9,7 @@ package sosdigital;
  *
  * @author mayke
  */
-public class Servico {
+public class Servico implements Cloneable{
     private static int geraid = 0;
     private int id;
     private String nome;
@@ -29,5 +29,16 @@ public class Servico {
     
     public String getNome(){
         return nome;
+    }
+    
+    public Object clone(){
+        Object obj = null;
+        try{
+            obj = super.clone();
+            
+        }catch (CloneNotSupportedException ex){
+            ex.printStackTrace();
+        }        
+        return obj;
     }
 }

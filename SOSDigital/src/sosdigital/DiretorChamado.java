@@ -14,7 +14,7 @@ import java.text.SimpleDateFormat;
  */
 public class DiretorChamado {
     
-    public Chamado chamaPolicia(int protocolo, String chave, SimpleDateFormat data, String descricao){
+    public Chamado chamaPolicia(int protocolo, String chave, SimpleDateFormat data, String descricao, Servico servico){
         Chamado novoChamado = new ChamadoPolicia();
         
         ChamadoPoliciaBuilder chamadoBuilder = new ChamadoPoliciaBuilder(novoChamado);
@@ -22,12 +22,13 @@ public class DiretorChamado {
         chamadoBuilder.adicionarChave(chave);
         chamadoBuilder.adicionarData(data);
         chamadoBuilder.adicionarDescricao(descricao);
+        chamadoBuilder.adicionarServico(servico);
         novoChamado.transferirChamado();
         
         return novoChamado;
     }
     
-    public Chamado chamaSamu(int protocolo, String chave, SimpleDateFormat data, String descricao){
+    public Chamado chamaSamu(int protocolo, String chave, SimpleDateFormat data, String descricao, Servico servico){
         Chamado novoChamado = new ChamadoSamu();
         
         ChamadoSamuBuilder chamadoBuilder = new ChamadoSamuBuilder(novoChamado);
@@ -35,11 +36,12 @@ public class DiretorChamado {
         chamadoBuilder.adicionarChave(chave);
         chamadoBuilder.adicionarData(data);
         chamadoBuilder.adicionarDescricao(descricao);
+        chamadoBuilder.adicionarServico(servico);
         novoChamado.transferirChamado();
         
         return novoChamado;
     }
-    public Chamado chamaBombeiro(int protocolo, String chave, SimpleDateFormat data, String descricao){
+    public Chamado chamaBombeiro(int protocolo, String chave, SimpleDateFormat data, String descricao, Servico servico){
         Chamado novoChamado = new ChamadoBombeiros();
         
         ChamadoBombeiroBuilder chamadoBuilder = new ChamadoBombeiroBuilder(novoChamado);
@@ -47,6 +49,7 @@ public class DiretorChamado {
         chamadoBuilder.adicionarChave(chave);
         chamadoBuilder.adicionarData(data);
         chamadoBuilder.adicionarDescricao(descricao);
+        chamadoBuilder.adicionarServico(servico);
         novoChamado.transferirChamado();
         
         return novoChamado;

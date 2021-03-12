@@ -11,7 +11,7 @@ import java.text.SimpleDateFormat;
  *
  * @author mayke
  */
-public class Comunicante extends Usuario {
+public class Comunicante extends Usuario implements Cloneable{
     private Localizacao localizacao;
     private Contato contato; 
     
@@ -35,6 +35,17 @@ public class Comunicante extends Usuario {
     
     public Contato getContato(){
         return contato;
+    }
+    
+    public Object clone(){
+        Object obj = null;
+        try{
+            obj = super.clone();
+            
+        }catch (CloneNotSupportedException ex){
+            ex.printStackTrace();
+        }        
+        return obj;
     }
 
 }
