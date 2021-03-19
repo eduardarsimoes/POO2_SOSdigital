@@ -5,13 +5,14 @@
 _________
 
 ### 📌 Contexto
-
+<p align="justify">
 O SOS Digital é um projeto didático que foi desenvolvido continuamente durante as disciplinas de Teoria Geral de Sistemas, Projeto de Sistemas e Desenvolvimento Orientado a Objetos. O projeto serviu como base para o aprendizado de conceitos e aplicações práticas de conhecimentos adquiridos.
+</p>
 
 ### :computer: Projeto
-
+<p align="justify">
 Este projeto tem o objetivo de desenvolver uma solução capaz de integrar os principais serviços de atendimentos emergenciais de um estado, com o intuito de diminuir a quantidade de trotes e o tempo de atendimento.
-
+</p>
 ### :art: Layout
 
 Em breve
