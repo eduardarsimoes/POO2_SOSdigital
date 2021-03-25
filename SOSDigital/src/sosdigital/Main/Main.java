@@ -3,10 +3,21 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sosdigital;
+package sosdigital.Main;
 
+import sosdigital.Singleton.ProtocolNumberGenerator;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import sosdigital.Atendente;
+import sosdigital.Chamado;
+import sosdigital.Comunicante;
+import sosdigital.Contato;
+import sosdigital.ConversaChamado;
+import sosdigital.DiretorChamado;
+import sosdigital.Localizacao;
+import sosdigital.Servico;
+import sosdigital.TipoVeiculo;
+import sosdigital.Veiculo;
 
 /**
  *
@@ -31,11 +42,18 @@ public class Main {
         Veiculo veiculo2 = new Veiculo("bsdaj23ff",TipoVeiculo.AMBULANCIA,"edss-0923",servico2);
         Veiculo veiculo3 = new Veiculo("asfdsfdse",TipoVeiculo.CAMINHAOBOMBEIRO,"edus-0823",servico3);
         
+        //Método Singleton
+        ProtocolNumberGenerator generator = ProtocolNumberGenerator.getInstance();
+        
         //Método Fábrica
         DiretorChamado criaChamado = new DiretorChamado();      
-        Chamado chamado1 = criaChamado.chamaPolicia(1,"A",new SimpleDateFormat("2020,01,01"),"Teste chamado Policia",servico1,loc,veiculo1,comunicante1);          
-        Chamado chamado2 = criaChamado.chamaBombeiro(2,"B",new SimpleDateFormat("2020,01,01"),"Teste chamado Bombeiro",servico3, loc, veiculo3, comunicante1);
-        Chamado chamado3 = criaChamado.chamaSamu(3,"C",new SimpleDateFormat("2020,01,01"),"Teste chamado Samu",servico2, loc, veiculo2, comunicante1); 
+        Chamado chamado1 = criaChamado.chamaPolicia(generator.getNextNumber(),"A",new SimpleDateFormat("2020,01,01"),"Teste chamado Policia",servico1,loc,veiculo1,comunicante1);          
+        Chamado chamado2 = criaChamado.chamaBombeiro(generator.getNextNumber(),"B",new SimpleDateFormat("2020,01,01"),"Teste chamado Bombeiro",servico3, loc, veiculo3, comunicante1);
+        Chamado chamado3 = criaChamado.chamaSamu(generator.getNextNumber(),"C",new SimpleDateFormat("2020,01,01"),"Teste chamado Samu",servico2, loc, veiculo2, comunicante1); 
+        
+        System.out.println("Protocolo chamado1: "+chamado1.getProtocolo());
+        System.out.println("Protocolo chamado2: "+chamado2.getProtocolo());
+        System.out.println("Protocolo chamado3: "+chamado3.getProtocolo()+"\n");
         
         //Método Observer
         Atendente atendente1 = new Atendente("a","b",new SimpleDateFormat("2020,01,01"));

@@ -1,5 +1,6 @@
 package sosdigital;
 
+import sosdigital.Observer.Observable;
 import java.util.ArrayList;
 
 public class ConversaChamado extends Observable{

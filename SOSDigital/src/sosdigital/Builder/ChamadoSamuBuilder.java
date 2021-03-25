@@ -3,19 +3,22 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package sosdigital;
+package sosdigital.Builder;
+
+import sosdigital.Chamado;
 
 /**
  *
  * @author Andre
  */
-public class ChamadoBombeiroBuilder extends ChamadoBuilder{
+public class ChamadoSamuBuilder extends ChamadoBuilder{
     
-    public ChamadoBombeiroBuilder(Chamado novoChamado){
+    public ChamadoSamuBuilder(Chamado novoChamado){
         this.chamado = novoChamado;
     } 
     
-    public void criaChamadoBombeiro(){
-        System.out.println("Chamado Bombeiro criado");
+    public void criaChamadoSamu(){
+        System.out.println("Chamado Samu criado");
+
     }
 }

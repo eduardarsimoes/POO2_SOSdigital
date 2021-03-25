@@ -5,6 +5,8 @@
  */
 package sosdigital;
 
+import sosdigital.Observer.Observable;
+import sosdigital.Observer.Observer;
 import java.text.SimpleDateFormat;
 
 /**

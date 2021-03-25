@@ -1,5 +1,6 @@
-package sosdigital;
+package sosdigital.Observer;
 
+import sosdigital.Observer.Observer;
 import java.util.ArrayList;
 
 public class Observable {
