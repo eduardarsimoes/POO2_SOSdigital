@@ -22,12 +22,11 @@ import sosdigital.Veiculo;
  * @author Andre
  */
 public class DiretorChamado {
+    //Singleton
+    ProtocolNumberGenerator generator = ProtocolNumberGenerator.getInstance();
     
     public Chamado chamaPolicia(String chave, SimpleDateFormat data, String descricao, Servico servico, Localizacao localizacao, Veiculo veiculo, Comunicante comunicante){
         Chamado novoChamado = new ChamadoPolicia();
-        
-        //Singleton
-        ProtocolNumberGenerator generator = ProtocolNumberGenerator.getInstance();
         
         ChamadoPoliciaBuilder chamadoBuilder = new ChamadoPoliciaBuilder(novoChamado);
         chamadoBuilder.adicionarProtocolo(generator.getNextNumber());
@@ -46,9 +45,6 @@ public class DiretorChamado {
     public Chamado chamaSamu(String chave, SimpleDateFormat data, String descricao, Servico servico, Localizacao localizacao, Veiculo veiculo, Comunicante comunicante){
         Chamado novoChamado = new ChamadoSamu();
         
-        //Singleton
-        ProtocolNumberGenerator generator = ProtocolNumberGenerator.getInstance();
-        
         ChamadoSamuBuilder chamadoBuilder = new ChamadoSamuBuilder(novoChamado);
         chamadoBuilder.adicionarProtocolo(generator.getNextNumber());
         chamadoBuilder.adicionarChave(chave);
@@ -64,9 +60,6 @@ public class DiretorChamado {
     }
     public Chamado chamaBombeiro(String chave, SimpleDateFormat data, String descricao, Servico servico, Localizacao localizacao, Veiculo veiculo, Comunicante comunicante){
         Chamado novoChamado = new ChamadoBombeiros();
-        
-        //Singleton
-        ProtocolNumberGenerator generator = ProtocolNumberGenerator.getInstance();
         
         ChamadoBombeiroBuilder chamadoBuilder = new ChamadoBombeiroBuilder(novoChamado);
         chamadoBuilder.adicionarProtocolo(generator.getNextNumber());
