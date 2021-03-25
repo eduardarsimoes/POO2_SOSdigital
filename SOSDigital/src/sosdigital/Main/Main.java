@@ -13,7 +13,7 @@ import sosdigital.Chamado;
 import sosdigital.Comunicante;
 import sosdigital.Contato;
 import sosdigital.ConversaChamado;
-import sosdigital.DiretorChamado;
+import sosdigital.Builder.DiretorChamado;
 import sosdigital.Localizacao;
 import sosdigital.Servico;
 import sosdigital.TipoVeiculo;
@@ -42,15 +42,13 @@ public class Main {
         Veiculo veiculo2 = new Veiculo("bsdaj23ff",TipoVeiculo.AMBULANCIA,"edss-0923",servico2);
         Veiculo veiculo3 = new Veiculo("asfdsfdse",TipoVeiculo.CAMINHAOBOMBEIRO,"edus-0823",servico3);
         
-        //Método Singleton
-        ProtocolNumberGenerator generator = ProtocolNumberGenerator.getInstance();
-        
         //Método Fábrica
         DiretorChamado criaChamado = new DiretorChamado();      
-        Chamado chamado1 = criaChamado.chamaPolicia(generator.getNextNumber(),"A",new SimpleDateFormat("2020,01,01"),"Teste chamado Policia",servico1,loc,veiculo1,comunicante1);          
-        Chamado chamado2 = criaChamado.chamaBombeiro(generator.getNextNumber(),"B",new SimpleDateFormat("2020,01,01"),"Teste chamado Bombeiro",servico3, loc, veiculo3, comunicante1);
-        Chamado chamado3 = criaChamado.chamaSamu(generator.getNextNumber(),"C",new SimpleDateFormat("2020,01,01"),"Teste chamado Samu",servico2, loc, veiculo2, comunicante1); 
+        Chamado chamado1 = criaChamado.chamaPolicia("A",new SimpleDateFormat("2020,01,01"),"Teste chamado Policia",servico1,loc,veiculo1,comunicante1);          
+        Chamado chamado2 = criaChamado.chamaBombeiro("B",new SimpleDateFormat("2020,01,01"),"Teste chamado Bombeiro",servico3, loc, veiculo3, comunicante1);
+        Chamado chamado3 = criaChamado.chamaSamu("C",new SimpleDateFormat("2020,01,01"),"Teste chamado Samu",servico2, loc, veiculo2, comunicante1); 
         
+        //Método Singleton
         System.out.println("Protocolo chamado1: "+chamado1.getProtocolo());
         System.out.println("Protocolo chamado2: "+chamado2.getProtocolo());
         System.out.println("Protocolo chamado3: "+chamado3.getProtocolo()+"\n");

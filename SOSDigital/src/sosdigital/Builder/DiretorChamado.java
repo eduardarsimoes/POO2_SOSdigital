@@ -1,9 +1,15 @@
-package sosdigital;
+package sosdigital.Builder;
 
-import sosdigital.Builder.ChamadoPoliciaBuilder;
-import sosdigital.Builder.ChamadoSamuBuilder;
-import sosdigital.Builder.ChamadoBombeiroBuilder;
 import java.text.SimpleDateFormat;
+import sosdigital.Chamado;
+import sosdigital.ChamadoBombeiros;
+import sosdigital.ChamadoPolicia;
+import sosdigital.ChamadoSamu;
+import sosdigital.Comunicante;
+import sosdigital.Localizacao;
+import sosdigital.Servico;
+import sosdigital.Singleton.ProtocolNumberGenerator;
+import sosdigital.Veiculo;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -17,11 +23,14 @@ import java.text.SimpleDateFormat;
  */
 public class DiretorChamado {
     
-    public Chamado chamaPolicia(int protocolo, String chave, SimpleDateFormat data, String descricao, Servico servico, Localizacao localizacao, Veiculo veiculo, Comunicante comunicante){
+    public Chamado chamaPolicia(String chave, SimpleDateFormat data, String descricao, Servico servico, Localizacao localizacao, Veiculo veiculo, Comunicante comunicante){
         Chamado novoChamado = new ChamadoPolicia();
         
+        //Singleton
+        ProtocolNumberGenerator generator = ProtocolNumberGenerator.getInstance();
+        
         ChamadoPoliciaBuilder chamadoBuilder = new ChamadoPoliciaBuilder(novoChamado);
-        chamadoBuilder.adicionarProtocolo(protocolo);
+        chamadoBuilder.adicionarProtocolo(generator.getNextNumber());
         chamadoBuilder.adicionarChave(chave);
         chamadoBuilder.adicionarData(data);
         chamadoBuilder.adicionarDescricao(descricao);
@@ -34,11 +43,14 @@ public class DiretorChamado {
         return novoChamado;
     }
     
-    public Chamado chamaSamu(int protocolo, String chave, SimpleDateFormat data, String descricao, Servico servico, Localizacao localizacao, Veiculo veiculo, Comunicante comunicante){
+    public Chamado chamaSamu(String chave, SimpleDateFormat data, String descricao, Servico servico, Localizacao localizacao, Veiculo veiculo, Comunicante comunicante){
         Chamado novoChamado = new ChamadoSamu();
         
+        //Singleton
+        ProtocolNumberGenerator generator = ProtocolNumberGenerator.getInstance();
+        
         ChamadoSamuBuilder chamadoBuilder = new ChamadoSamuBuilder(novoChamado);
-        chamadoBuilder.adicionarProtocolo(protocolo);
+        chamadoBuilder.adicionarProtocolo(generator.getNextNumber());
         chamadoBuilder.adicionarChave(chave);
         chamadoBuilder.adicionarData(data);
         chamadoBuilder.adicionarDescricao(descricao);
@@ -50,11 +62,14 @@ public class DiretorChamado {
         
         return novoChamado;
     }
-    public Chamado chamaBombeiro(int protocolo, String chave, SimpleDateFormat data, String descricao, Servico servico, Localizacao localizacao, Veiculo veiculo, Comunicante comunicante){
+    public Chamado chamaBombeiro(String chave, SimpleDateFormat data, String descricao, Servico servico, Localizacao localizacao, Veiculo veiculo, Comunicante comunicante){
         Chamado novoChamado = new ChamadoBombeiros();
         
+        //Singleton
+        ProtocolNumberGenerator generator = ProtocolNumberGenerator.getInstance();
+        
         ChamadoBombeiroBuilder chamadoBuilder = new ChamadoBombeiroBuilder(novoChamado);
-        chamadoBuilder.adicionarProtocolo(protocolo);
+        chamadoBuilder.adicionarProtocolo(generator.getNextNumber());
         chamadoBuilder.adicionarChave(chave);
         chamadoBuilder.adicionarData(data);
         chamadoBuilder.adicionarDescricao(descricao);
