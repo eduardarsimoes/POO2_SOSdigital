@@ -13,6 +13,7 @@ O SOS Digital é um projeto didático que foi desenvolvido continuamente durante
 <p align="justify">
 Este projeto tem o objetivo de desenvolver uma solução capaz de integrar os principais serviços de atendimentos emergenciais de um estado, com o intuito de diminuir a quantidade de trotes e o tempo de atendimento.
 </p>
+
 ### :art: Layout
 
 Em breve
