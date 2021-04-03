@@ -5,6 +5,8 @@
  */
 package sosdigital;
 
+import sosdigital.enumTipos.TipoVeiculo;
+
 /**
  *
  * @author mayke
