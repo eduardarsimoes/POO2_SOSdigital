@@ -29,7 +29,7 @@ public class Main {
     public static void main(String[] args) {
         ArrayList<Atendente> atendentes = new ArrayList();
         
-        Localizacao loc = new Localizacao("a",1,"b","c","d",2,3);
+        Localizacao loc = new Localizacao("Av Hugo Viola",1,"Jardim da Penha","Vitoria","Espirito Santo",2,3);
         
         Contato contato = new Contato(27,"123");
         
@@ -81,15 +81,15 @@ public class Main {
         
         Veiculo v = null;
         
-        if (escolha.equalsIgnoreCase("p")){
+        if (escolha.equalsIgnoreCase("policia")){
             fabrica = new FabricaPolicia();
-            v = new Veiculo("askjd98sa",TipoVeiculo.VIATURA,"edus-0923",servico1);
-        } else if (escolha.equalsIgnoreCase("s")) {
+            v = new Veiculo("askjd98sb",TipoVeiculo.VIATURA,"edus-0927",servico1);
+        } else if (escolha.equalsIgnoreCase("samu")) {
             fabrica = new FabricaSamu();
-            v = new Veiculo("bsdaj23ff",TipoVeiculo.AMBULANCIA,"edss-0923",servico2);
+            v = new Veiculo("bsdaj23fc",TipoVeiculo.AMBULANCIA,"edss-0928",servico2);
         } else {
             fabrica = new FabricaBombeiro();
-            v = new Veiculo("asfdsfdse",TipoVeiculo.CAMINHAOBOMBEIRO,"edus-0823",servico3);
+            v = new Veiculo("asfdsfdsa",TipoVeiculo.CAMINHAOBOMBEIRO,"edus-0803",servico3);
         }
         
         SolicitacaoVeiculo solicitacao = fabrica.criaSolicitacaoVeiculo();

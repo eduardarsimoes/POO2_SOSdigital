@@ -15,7 +15,7 @@ public class LocalizacaoBombeiro implements EnvioLocalizacao{
 
     @Override
     public void envio(Localizacao localizacao) {
-        System.out.println("Envio locacalizacao Bombeiro: " + localizacao.getEndereco());
+        System.out.println("Enviando locacalizacao Bombeiro: " + localizacao.getEndereco());
     }
     
 }
